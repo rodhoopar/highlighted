@@ -45,7 +45,7 @@ var disable_urls_try1 = '<!doctype html> \
 jQuery(document).ready(function($) {
 	//find and highlight player names in page body
 	$("body").highlight(players, { wordsOnly: true, 
-						className: "player_highlight" });
+					className: "player_highlight" });
 	
 	//toggle the darker highlight if name is hovered over
 	$(".player_highlight").hover(function() {
