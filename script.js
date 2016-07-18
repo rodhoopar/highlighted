@@ -7,6 +7,11 @@ var wiki_suffix_map = {'elton brand': 'Elton_Brand', 'kentavious caldwell-pope':
 //wikipedia mobile article prefix
 var wiki_prefix = "https://en.m.wikipedia.org/wiki/";
 
+//iframe prefix, middle part, and suffix
+var iframe_prefix = '<iframe width="350" height="400" src="';
+var iframe_mid = '">'
+var iframe_suffix = '<\/iframe>';
+
 //script to disable urls in the iframe
 var disable_urls = 	'<script>src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"><\/script> \
 					<script> \
@@ -21,42 +26,49 @@ var disable_urls = 	'<script>src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/
 /** first attempt at disabling urls
 var disable_urls_try1 = '<!doctype html> \
 			<html lang="en"> \
-						<head> \
-  							<meta charset="utf-8"> \
-  							<title>contents demo<\/title> \
-  							<script src="https://code.jquery.com/jquery-1.10.2.js"><\/script> \
-						<\/head> \
-						<body> \
-							<iframe src="https://www.google.com" width="80%" height="600" id="frameDemo"><\/iframe> \
-							<script> \
-								$( "#frameDemo" ).contents().find( "a" ).css( "background-color", "#BADA55" ); \
-							<\/script> \
-						<\/body> \
-						<\/html>')
+				<head> \
+  					<meta charset="utf-8"> \
+  					<title>contents demo<\/title> \
+  					<script src="https://code.jquery.com/jquery-1.10.2.js"><\/script> \
+				<\/head> \
+				<body> \
+					<iframe id="container" src="https://www.google.com" width="80%" height="600" id="frameDemo"><\/iframe> \
+					<script> \
+						$("iframe").contents().find("a").click(function(event) { \
+							event.preventDefault(); \
+						});
+					<\/script> \
+					<\/body> \
+			<\/html>')
 **/
 
 jQuery(document).ready(function($) {
 	//find and highlight player names in page body
-	$("body").highlight(players, { wordsOnly: true, className: "baller_highlight" });
+	$("body").highlight(players, { wordsOnly: true, 
+								   className: "player_highlight" });
 	
 	//toggle the darker highlight if name is hovered over
-	$(".baller_highlight").hover(function() {
-		$(this).toggleClass("baller_hover");
+	$(".player_highlight").hover(function() {
+		$(this).toggleClass("player_hover");
 	});
 
 	//for each highlight in the page
-	$(".baller_highlight").each(function() {
+	$(".player_highlight").each(function() {
 		//get the name and corresponding wiki url
 		var name = $(this).text();
 		var wiki_name = name.toLowerCase();
 		var injection = wiki_prefix + wiki_suffix_map[wiki_name];
-		var html = "";
 		
 		//inject a tooltip with the wiki page in an iframe
-		Tipped.create(this, '<iframe width="350" height="400" src="' + injection + '"><\/iframe>', { position: "right", title: name, spinner: true });
+		Tipped.create(this, 
+					  iframe_prefix + injection + iframe_mid + disable_urls + iframe_suffix, 
+					  { position: "right", 
+					    title: name, 
+					    spinner: true });
 
 		//deprecated 
-		/** first attempt at injecting tooltip with the wikipage using the page's raw html as a string 
+		/** first attempt at injecting tooltip with the wikipage using the page's raw html
+		var html = "";
 		$.ajax({
 			url: injection,
 			async: false,
