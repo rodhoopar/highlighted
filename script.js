@@ -18,7 +18,7 @@ var disable_urls = 	'<script>src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/
 //deprecated
 /** first attempt at disabling urls
 var disable_urls_try1 = '<!doctype html> \
-						<html lang="en"> \
+		<html lang="en"> \
 						<head> \
   							<meta charset="utf-8"> \
   							<title>contents demo<\/title> \
