@@ -1,6 +1,6 @@
 # highlighted
 
-Source code for the Chrome extension highlighted, which highlights the names of NBA players found in the pages you browse. When you hover over the name, the extension will display a small popup that has the player's information and statistics from Wikipedia. I made this extension to help me with fantasy basketball :)
+Source code for the Chrome extension highlighted, which highlights the names of active NBA players found in the pages you browse. When you hover over the name, the extension will display a small popup that has the player's information and statistics from Wikipedia. I made this extension to help me with fantasy basketball :)
 
 Demo of capabilities: 
 
