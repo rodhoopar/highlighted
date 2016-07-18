@@ -45,7 +45,7 @@ var disable_urls_try1 = '<!doctype html> \
 jQuery(document).ready(function($) {
 	//find and highlight player names in page body
 	$("body").highlight(players, { wordsOnly: true, 
-					className: "player_highlight" });
+				  className: "player_highlight" });
 	
 	//toggle the darker highlight if name is hovered over
 	$(".player_highlight").hover(function() {
@@ -61,10 +61,10 @@ jQuery(document).ready(function($) {
 		
 		//inject a tooltip with the wiki page in an iframe
 		Tipped.create(this, 
-					  iframe_prefix + injection + iframe_mid + disable_urls + iframe_suffix, 
-					  { position: "right", 
-					    title: name, 
-					    spinner: true });
+			iframe_prefix + injection + iframe_mid + disable_urls + iframe_suffix, 
+			{ position: "right", 
+			  title: name, 
+			  spinner: true });
 
 		//deprecated 
 		/** first attempt at injecting tooltip with the wikipage using the page's raw html
