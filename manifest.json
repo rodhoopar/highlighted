@@ -1,0 +1,20 @@
+//manifest.json file required of all Chrome extensions 
+
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+
+  "name": "Baller Alert",
+  "description": "Find and highlight basketball players",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "exclude_globs": ["*wikipedia.org*"],
+      "css":["css/tipped.css", "css/style.css"],
+      "js": ["tools/jquery-3.1.0.min.js", "tools/jquery.highlight.js", 
+             "tools/tipped.js", "script.js"]
+    }
+  ]
+}
