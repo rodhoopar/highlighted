@@ -8,17 +8,19 @@ var wiki_suffix_map = {'elton brand': 'Elton_Brand', 'kentavious caldwell-pope':
 var wiki_prefix = "https://en.m.wikipedia.org/wiki/";
 
 //script to disable urls in the iframe
-var disable_urls = 	'<script>src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"><\/script><script> \
+var disable_urls = 	'<script>src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"><\/script> \
+					<script> \
 					$(document).onload(function(){ \
         				$("a").click(function(event) { \
             				event.preventDefault(); \
         				}); \
-					});<\/script>'
+					}); \
+					<\/script>'
 
 //deprecated
 /** first attempt at disabling urls
 var disable_urls_try1 = '<!doctype html> \
-		<html lang="en"> \
+			<html lang="en"> \
 						<head> \
   							<meta charset="utf-8"> \
   							<title>contents demo<\/title> \
