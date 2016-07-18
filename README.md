@@ -4,8 +4,8 @@ Source code for the Chrome extension highlighted, which highlights the names of 
 
 Demo of capabilities: 
 
-<screenshot>
+![Screenshot](https://raw.github.com/rodhoopar/highlighted/master/examples/demo.png)
 
-Also included is a python script that I wrote to get the names and corresponding Wikipedia URL's of all current NBA players from [https://en.wikipedia.org/wiki/List_of_current_NBA_team_rosters](https://en.wikipedia.org/wiki/List_of_current_NBA_team_rosters). I wrote it because I could not find a list of NBA players as strings, and it works nicely because python lists and maps have similar syntax to JavaScript arrays and objects, respectively. 
+Also included is a python script that I wrote to get the names and corresponding Wikipedia URL's of all current NBA players from [https://en.wikipedia.org/wiki/List_of_current_NBA_team_rosters](https://en.wikipedia.org/wiki/List_of_current_NBA_team_rosters). I wrote it because I couldn't find a list of NBA players as strings, and it works nicely because python lists and maps have similar syntax to JavaScript arrays and objects, respectively. 
 
 In future versions I hope to expand to more sports/leagues. Uses the highlight and tipped extensions to jQuery.
